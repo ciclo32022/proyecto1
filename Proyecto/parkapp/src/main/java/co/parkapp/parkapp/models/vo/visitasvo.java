@@ -1,8 +1,13 @@
 package co.parkapp.parkapp.models.vo;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Table;
+
+@Table("visitas")
 public class visitasvo {
     
     private String placa;
+    @Id
     private Integer id_propietario;
     private String propietario;
     private String tipovehiculo;

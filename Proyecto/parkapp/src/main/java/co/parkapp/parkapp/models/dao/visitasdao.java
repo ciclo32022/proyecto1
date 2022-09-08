@@ -1,21 +1,28 @@
 package co.parkapp.parkapp.models.dao;
 
-import java.sql.SQLException;
+import org.springframework.data.jdbc.repository.query.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
-public class visitasdao {
-    public void Crearvisita() throws SQLException{
+import co.parkapp.parkapp.models.vo.visitasvo;
+
+@Repository
+public interface visitasdao extends CrudRepository<visitasvo,Integer> {
+    
+    public void Crearvisita(){
  
     }
 
-    public void Consultarvisita() throws SQLException{
+    @Query("SELECT * FROM visitasvo WHERE id_propietario=elid_propietario")
+    public visitasvo Consultarvisita(@Param("elid_propietario") Integer id_propietario){
+    }
+
+    public void Eliminarvisita(){
  
     }
 
-    public void Eliminarvisita() throws SQLException{
- 
-    }
-
-    public void Actualizarvisita() throws SQLException{
+    public void Actualizarvisita(){
  
     }
 }
