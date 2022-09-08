@@ -6,8 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class visitacontroller {
 
-	@GetMapping("/login.html")
+	@GetMapping("/bienvenida")
     private String verificarlogin(){
-		return null;
+		System.out.println("bienvenida");
+
+		/*String nombreusuario= "homero";
+		modelo.addAttribute("Nombre", nombreusuario);*/
+		return "bienvenida";
 	}
 }
