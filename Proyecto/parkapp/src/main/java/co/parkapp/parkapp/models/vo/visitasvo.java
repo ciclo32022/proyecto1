@@ -1,7 +1,8 @@
 package co.parkapp.parkapp.models.vo;
 
+import javax.persistence.Table;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.Table;
+
 
 @Table("visitas")
 public class visitasvo {
