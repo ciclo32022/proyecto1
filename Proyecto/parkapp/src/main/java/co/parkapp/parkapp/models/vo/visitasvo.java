@@ -1,23 +1,30 @@
 package co.parkapp.parkapp.models.vo;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
-import org.springframework.data.annotation.Id;
 
-
-@Table("visitas")
+@Entity
+@Table(name="visitas")
 public class visitasvo {
     
-    private String placa;
     @Id
     private Integer id_propietario;
+    private Integer id_visita;
     private String propietario;
+    private String placa;
     private String tipovehiculo;
     private String horaentrada;
-    private String horasalidad;
+    private String horasalida;
     private Float valorpagado;
     private String estado;
     
-    
+    public Integer getId_visita() {
+        return id_visita;
+    }
+    public void setId_visita(Integer id_visita) {
+        this.id_visita = id_visita;
+    }
     public String getPlaca() {
         return placa;
     }
@@ -42,11 +49,11 @@ public class visitasvo {
     public void setHoraentrada(String horaentrada) {
         this.horaentrada = horaentrada;
     }
-    public String getHorasalidad() {
-        return horasalidad;
+    public String getHorasalida() {
+        return horasalida;
     }
-    public void setHorasalidad(String horasalidad) {
-        this.horasalidad = horasalidad;
+    public void setHorasalida(String horasalida) {
+        this.horasalida = horasalida;
     }
     public Float getValorpagado() {
         return valorpagado;
@@ -71,4 +78,5 @@ public class visitasvo {
     public String toString() {
         return "visitas []";
     }
+    
 }
