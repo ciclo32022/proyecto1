@@ -4,7 +4,6 @@
  */
 package co.parkapp.parkapp.views;
 
-import co.parkapp.parkapp.controllers.VisitasJpaController;
 import co.parkapp.parkapp.models.Visitas;
 
 /**
@@ -17,9 +16,8 @@ public class Visitasview {
     }
     
     public void Insertarvisita(Visitas visitas){
-        VisitasJpaController visitasJpaController=new VisitasJpaController();
         try {
-            visitasJpaController.create(visitas);
+            
         } catch (Exception e) {
             e.printStackTrace();
         }finally{

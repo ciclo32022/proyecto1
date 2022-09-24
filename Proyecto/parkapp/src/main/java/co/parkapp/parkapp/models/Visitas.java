@@ -164,26 +164,6 @@ public class Visitas implements Serializable {
     }
 
     @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (idPropietario != null ? idPropietario.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Visitas)) {
-            return false;
-        }
-        Visitas other = (Visitas) object;
-        if ((this.idPropietario == null && other.idPropietario != null) || (this.idPropietario != null && !this.idPropietario.equals(other.idPropietario))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
     public String toString() {
         return "co.parkapp.parkapp.models.Visitas[ idPropietario=" + idPropietario + " ]";
     }
