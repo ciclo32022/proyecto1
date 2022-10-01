@@ -5,20 +5,12 @@
 package co.parkapp.parkapp.entity;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
-
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
-import javax.persistence.JoinColumn;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -63,13 +55,13 @@ public class Visitantes{
     @Column(name = "estado")
     private String estado;
 
-    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
+    /*@ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
     @JoinTable(name = "visitas_courses", joinColumns = {
     @JoinColumn(name = "visita_id", referencedColumnName = "id", nullable = false, updatable = false)
     }, inverseJoinColumns = {
     @JoinColumn(name = "course_id", referencedColumnName = "id", nullable = false, updatable = false)
     })
-    private Set<Course> courses=new HashSet<>();
+    private Set<Course> courses=new HashSet<>();*/
 
     public Visitantes() {
     }
@@ -158,17 +150,9 @@ public class Visitantes{
         this.estado = estado;
     }
 
-    public Set<Course> getCourses() {
-        return courses;
-    }
-
-    public void setCourses(Set<Course> courses) {
-        this.courses = courses;
-    }
-
     @Override
     public String toString() {
-        return "Visitantes [courses=" + courses + ", estado=" + estado + ", horaentrada=" + horaentrada
+        return "Visitantes [estado=" + estado + ", horaentrada=" + horaentrada
                 + ", horasalida=" + horasalida + ", idPropietario=" + idPropietario + ", idVisita=" + idVisita
                 + ", placa=" + placa + ", propietario=" + propietario + ", tipovehiculo=" + tipovehiculo
                 + ", valorpagado=" + valorpagado + "]";
