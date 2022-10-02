@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +17,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Salida de Visita</a>
+                <a th:href="@{/visitas}" class="nav-link active" aria-current="page" href="#">Salida de Visita</a>
               </li>
             </ul>
           </div>
@@ -26,16 +26,23 @@
     <div class="container mt-3">
       <div class="row">
         <div class="card text-center">
-          <div class="card-body"><h1 class="card-title">Crear</h1>
-            <form >
+          <div class="card-body"><h1 class="card-title">Crear Nueva Visita</h1>
+            <form th:action="@{/visitas}" th:object="${visitantes}" method="post">
               <div class="mb-3">
-                <div class="form-group"><label>Nombre del propietario</label><input type="text" name="namepropietario"
+                <div class="form-group"><label>Nombre del propietario</label><input type="text" name="namepropietario" th:field="*{propietario}"
                  class="form-control" placeholder="Ingrese el nombre del propietario" /></div>
-                <div class="form-group"><label>ID del propietario</label><input type="text" name="idpropietario"
+                <div class="form-group"><label>ID del propietario</label><input type="text" name="idpropietario" th:field="*{id_propietario}"
                  class="form-control" placeholder="Ingrese la identificacion del propietario" /></div>
-                <div class="form-group"><label>Placa Vehiculo</label><input type="text" name="placa"
+                <div class="form-group"><label>Placa Vehiculo</label><input type="text" name="placa" th:field="*{placa}"
                  class="form-control" placeholder="Ingrese la placa del Vehiculo" /></div>
-                <div class="box-footer mt-4"><button type="submit" class="btn_primary">Enviar</button></div>
+                <div class="form-group"><label>Tipo de Vehiculo</label><input type="text" name="tipovehiculo" th:field="*{tipovehiculo}"
+                  class="form-control" placeholder="Ingrese el tipo de Vehiculo" /></div>
+                <div class="form-group"><label>Hora de Entrada</label><input type="text" name="horaentrada" th:field="*{horaentrada}"
+                  class="form-control" placeholder="Ingrese la hora de Entrada" /></div>
+                <div class="form-group"><label>Estado</label><input type="text" name="estado" th:field="*{estado}"
+                  class="form-control" placeholder="Ingrese Estado" /></div>
+                  
+                  <div class="box-footer mt-4"><button type="submit" class="btn_primary">Enviar</button></div>
               </div>
             </form>
           </div>
