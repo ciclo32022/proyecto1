@@ -4,6 +4,9 @@
  */
 package co.parkapp.parkapp.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import co.parkapp.parkapp.entity.Visitantes;
-
+import co.parkapp.parkapp.repository.visitantesrepository;
 import co.parkapp.parkapp.services.visitasservice;
 
 /**
@@ -25,15 +28,15 @@ import co.parkapp.parkapp.services.visitasservice;
     @Autowired
     private visitasservice Visitasservice;
 
-    /*@Autowired
+    @Autowired
     private visitantesrepository Visitasrepository;
     
-    private List<Visitantes> visitanteslist=new ArrayList<>();*/
+    private List<Visitantes> visitanteslist=new ArrayList<>();
 
-    public VisitasJpaController(visitasservice Visitasservice) {
+    public VisitasJpaController(visitasservice Visitasservice, visitantesrepository visitantesrepository, List<Visitantes> visitanteslist) {
         this.Visitasservice = Visitasservice;
-        //this.Visitasrepository = Visitasrepository;
-        /*this.visitanteslist = visitanteslist;*/
+        this.Visitasrepository = visitantesrepository;
+        this.visitanteslist = visitanteslist;
     }
 
     public VisitasJpaController() {
@@ -42,7 +45,7 @@ import co.parkapp.parkapp.services.visitasservice;
     @GetMapping("/")
     public String home(Model model){
         model.addAttribute("visitas",Visitasservice.getAllVisitas());
-        return "consulta_visita";
+        return "index.html";
     }
 
     @GetMapping("/visitas")
@@ -71,7 +74,7 @@ import co.parkapp.parkapp.services.visitasservice;
         return "editar_visita";
     }
 
-    @PostMapping("/visitas/{id_propietario}")
+    @PostMapping("/actualizar/{id_propietario}")
     public String updateVisita(@PathVariable Integer id_propietario,@ModelAttribute("visitantes") Visitantes visitantes,Model model){
         Visitantes existenvisita= Visitasservice.getVisitantesById(id_propietario);
         existenvisita.setIdPropietario(id_propietario);
@@ -84,7 +87,7 @@ import co.parkapp.parkapp.services.visitasservice;
         return "redirect:/consulta_visita";
     }
 
-    @GetMapping("/visitas/{id_propietario}")
+    @GetMapping("/eliminar/{id_propietario}")
     public String deleteVisita(@PathVariable Integer id_propietario){
         Visitasservice.deleteVisitasById(id_propietario);
         return "redirect:/consulta_visita";

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Parkapp-Software para parqueaderos</title>  
+  <title>Parkapp - Actualizar</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -50,11 +50,11 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="E:\PARKAPP\parkapp\index.html">Inicio</a></li>
-           <li><a class="nav-link scrollto" href="E:\PARKAPP\parkapp\autos-estacionados.html">Autos en el parqueadero</a></li>
-           <li><a class="nav-link scrollto" href="E:\PARKAPP\parkapp\crear-automovil.html">Crear</a></li>
-           <li><a class="nav-link scrollto" href="E:\PARKAPP\parkapp\actualizar.html">Actualizar</a></li>
-       </ul>
+           <li><a class="nav-link scrollto" href="E:\PARKAPP\parkapp\index.html">Inicio</a></li>
+            <li><a class="nav-link scrollto" href="E:\PARKAPP\parkapp\autos-estacionados.html">Autos en el parqueadero</a></li>
+            <li><a class="nav-link scrollto" href="E:\PARKAPP\parkapp\crear-automovil.html">Crear</a></li>
+            <li><a class="nav-link scrollto" href="E:\PARKAPP\parkapp\actualizar.html">Actualizar</a></li>
+        </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
@@ -66,47 +66,98 @@
     <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
       <div class="row justify-content-center">
         <div class="col-xl-7 col-lg-9 text-center">
-          <h1>Gestiona los automóviles de tu parqueadero
+          <h1>Eliminar Visita
           </h1>
-          <h2>Elije la opción que más necesites:</h2>
+          <h2>Rellena los campos del formulario:</h2>
         </div>
       </div>
       
+        <br>
 
-      <div class="row icon-boxes">
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
-          <div class="icon-box">
-            <div class="icon"><i class="ri-eye-2-line"></i></div>
-            <h4 class="title"><a href="E:\PARKAPP\parkapp\autos-estacionados.html">Ver</a></h4>
-            <p class="description">Revisa la cantidad y tiempo de los automóviles</p>
-          </div>
-        </div>
+        
+      <div class="row box-form">
 
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="300">
-          <div class="icon-box">
-            <div class="icon"><i class="ri-add-circle-line"></i></div>
-            <h4 class="title"><a href="E:\PARKAPP\parkapp\crear-automovil.html">Crear Auto</a></h4>
-            <p class="description">Ingresa el nuevo automóvil a tu parqueadero</p>
+       
+        <br>
+        <form class="row g-3">
+          <div class="col-md-6">
+            <label for="inputState" class="form-label">Seleccionar auto</label>
+            <select id="inputState" class="form-select">
+              <option selected>Selecciona...</option></select>
           </div>
-        </div>
+          <div class="col-md-6">
+            <label for="inputState" class="form-label">Seleccionar nombre del propietario</label>
+            <select id="inputState" class="form-select">
+              <option selected>Selecciona...</option></select>
+          </div>
+         
+          
 
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="400">
-          <div class="icon-box">
-            <div class="icon"><i class="ri-refresh-line"></i></div>
-            <h4 class="title"><a href="E:\PARKAPP\parkapp\actualizar.html">Actualizar</a></h4>
-            <p class="description">Modifica el tiempo de un auto estacionado en tu parqueadero</p>
+          <div class="col-md-3">
+            <label for="inputdate" class="form-label">Fecha de ingreso</label>
+            <input type="text" class="form-control" id="inputdate">
           </div>
-        </div>
+          <div class="col-md-3">
+            <label for="inputState" class="form-label">Hora de ingreso
+            </label>
+            <select id="inputState" class="form-select">
+              <option selected>Selecciona...</option>
+              <option>08:00</option>
+              <option>09:00</option>
+              <option>10:00</option>
+              <option>11:00</option>
+              <option>12:00</option>
+              <option>13:00</option>
+              <option>14:00</option>
+              <option>15:00</option>
+              <option>16:00</option>
+              <option>17:00</option>
+              <option>18:00</option>
+              <option>19:00</option>
+              <option>20:00</option>
+              <option>21:00</option>
+              <option>22:00</option>
+            </select>
+          </div>
+          
 
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="500">
-          <div class="icon-box">
-            <div class="icon"><i class="ri-close-circle-line"></i></div>
-            <h4 class="title"><a href="E:\PARKAPP\parkapp\eliminar.html">Eliminar</a></h4>
-            <p class="description">Elimina el registro un automóvil en especifico</p>
+          <div class="col-md-3">
+            <label for="inputdate" class="form-label">Fecha de salida</label>
+            <input type="text" class="form-control" id="inputdate">
           </div>
-        </div>
+          <div class="col-md-3">
+            <label for="inputState" class="form-label">Hora de salida</label>
+            <select id="inputState" class="form-select">
+              <option selected>Selecciona...</option>
+              <option>08:00</option>
+              <option>09:00</option>
+              <option>10:00</option>
+              <option>11:00</option>
+              <option>12:00</option>
+              <option>13:00</option>
+              <option>14:00</option>
+              <option>15:00</option>
+              <option>16:00</option>
+              <option>17:00</option>
+              <option>18:00</option>
+              <option>19:00</option>
+              <option>20:00</option>
+              <option>21:00</option>
+              <option>22:00</option>
+            </select>
+          </div>
+          
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Eliminar</button>
+          </div>
+        </form>
+
+
+
 
       </div>
+
+      
     </div>
   </section><!-- End Hero -->
 

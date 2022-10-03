@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Parkapp-Software para parqueaderos</title>  
+  <title>Parkapp - lista de Vehículos</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -50,8 +50,8 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="E:\PARKAPP\parkapp\index.html">Inicio</a></li>
-           <li><a class="nav-link scrollto" href="E:\PARKAPP\parkapp\autos-estacionados.html">Autos en el parqueadero</a></li>
+          <li><a class="nav-link scrollto" href="E:\PARKAPP\parkapp\index.html">Inicio</a></li>
+           <li><a class="nav-link scrollto active" href="E:\PARKAPP\parkapp\autos-estacionados.html">Autos en el parqueadero</a></li>
            <li><a class="nav-link scrollto" href="E:\PARKAPP\parkapp\crear-automovil.html">Crear</a></li>
            <li><a class="nav-link scrollto" href="E:\PARKAPP\parkapp\actualizar.html">Actualizar</a></li>
        </ul>
@@ -66,47 +66,98 @@
     <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
       <div class="row justify-content-center">
         <div class="col-xl-7 col-lg-9 text-center">
-          <h1>Gestiona los automóviles de tu parqueadero
+          <h1>Autos estacionados
           </h1>
-          <h2>Elije la opción que más necesites:</h2>
+          <h2>Revisa la lista y elimina artículos de tu interés:</h2>
         </div>
       </div>
       
+        <br>
+      <div class="row box-table">
+        <table class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nombre del Propietario</th>
+              <th scope="col">Placa</th>
+              <th scope="col">Fecha de Ingreso</th>
+              <th scope="col">Hora de Ingreso</th>
+              <th scope="col">Fecha de Salida</th>
+              <th scope="col">Hora de Salida</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Eliminar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>TXC74F</td>
+              <td>20/09/2022</td>
+              <td>10:00</td>
+              <td>20/09/2022</td>
+              <td>11:00</td>
+              <td>$5.000</td>
+              <td><span style="font-size: 25px;"><a href="#"><i class="ri-close-circle-fill"></i></a></span></td>           
+            </tr>
 
-      <div class="row icon-boxes">
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
-          <div class="icon-box">
-            <div class="icon"><i class="ri-eye-2-line"></i></div>
-            <h4 class="title"><a href="E:\PARKAPP\parkapp\autos-estacionados.html">Ver</a></h4>
-            <p class="description">Revisa la cantidad y tiempo de los automóviles</p>
-          </div>
-        </div>
+            <tr>
+              <th scope="row">1</th>
+              <td>John Smith</td>
+              <td>DHL25R</td>
+              <td>20/09/2022</td>
+              <td>11:00</td>
+              <td>20/09/2022</td>
+              <td>15:00</td>
+              <td>$20.000</td>
+              <td><span style="font-size: 25px;"><a href="#"><i class="ri-close-circle-fill"></i></a></span></td>           
+            </tr>
 
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="300">
-          <div class="icon-box">
-            <div class="icon"><i class="ri-add-circle-line"></i></div>
-            <h4 class="title"><a href="E:\PARKAPP\parkapp\crear-automovil.html">Crear Auto</a></h4>
-            <p class="description">Ingresa el nuevo automóvil a tu parqueadero</p>
-          </div>
-        </div>
+            <tr>
+              <th scope="row">1</th>
+              <td>Pepito Perez</td>
+              <td>XRE40F</td>
+              <td>20/09/2022</td>
+              <td>12:00</td>
+              <td>20/09/2022</td>
+              <td>17:00</td>
+              <td>$25.000</td>
+              <td><span style="font-size: 25px;"><a href="#"><i class="ri-close-circle-fill"></i></a></span></td>           
+            </tr>
 
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="400">
-          <div class="icon-box">
-            <div class="icon"><i class="ri-refresh-line"></i></div>
-            <h4 class="title"><a href="E:\PARKAPP\parkapp\actualizar.html">Actualizar</a></h4>
-            <p class="description">Modifica el tiempo de un auto estacionado en tu parqueadero</p>
-          </div>
-        </div>
+            <tr>
+              <th scope="row">1</th>
+              <td>Lucia Fernandez</td>
+              <td>MED85H</td>
+              <td>20/09/2022</td>
+              <td>13:00</td>
+              <td>20/09/2022</td>
+              <td>15:00</td>
+              <td>$10.000</td>
+              <td><span style="font-size: 25px;"><a href="#"><i class="ri-close-circle-fill"></i></a></span></td>           
+            </tr>
 
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="500">
-          <div class="icon-box">
-            <div class="icon"><i class="ri-close-circle-line"></i></div>
-            <h4 class="title"><a href="E:\PARKAPP\parkapp\eliminar.html">Eliminar</a></h4>
-            <p class="description">Elimina el registro un automóvil en especifico</p>
-          </div>
-        </div>
+            <tr>
+              <th scope="row">1</th>
+              <td>Nina Martinez</td>
+              <td>WXYD85T</td>
+              <td>20/09/2022</td>
+              <td>14:00</td>
+              <td>20/09/2022</td>
+              <td>18:00</td>
+              <td>$20.000</td>
+              <td><span style="font-size: 25px;"><a href="#"><i class="ri-close-circle-fill"></i></a></span></td>           
+            </tr>
+            
+          </tbody>
+        </table>
+
+
+
 
       </div>
+
+      
     </div>
   </section><!-- End Hero -->
 
