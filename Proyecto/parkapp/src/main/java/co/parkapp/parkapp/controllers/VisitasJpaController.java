@@ -44,33 +44,33 @@ import co.parkapp.parkapp.services.visitasservice;
         return "index.html";
     }
 
-    @GetMapping("/visitas")
+    @GetMapping("/index/listarvisitas")
     public String listVisitas(Model model){
         model.addAttribute("visitas",Visitasservice.getAllVisitas());
-        return "consulta_visita";
+        return "consultar-visitas";
     }
 
-    @GetMapping("/crearvisita")
+    @GetMapping("/index/new")
     public String createVisitaForm(Model model){
         Visitantes visitantes=new Visitantes();
         model.addAttribute("visitantes",visitantes);
-        return "create_visita";
+        return "crear-visita.html";
     }
 
-    @PostMapping("/visitas")
+    @PostMapping("/index/safe")
     public String safeVisita(@ModelAttribute("visitantes") Visitantes visitantes){
         Visitasservice.saveVisitas(visitantes);
-        return "redirect:/consulta_visita";
+        return "redirect:/consultar-visitas";
     }
 
-    @GetMapping("/visitas/edit/{id_propietario}")
+    @GetMapping("/index/edit/{id_propietario}")
     public String editVisitaForm(@PathVariable Integer id_propietario,Model model){
         Visitantes vt= Visitasservice.getVisitantesById(id_propietario);
         model.addAttribute("visitantes",vt);
-        return "editar_visita";
+        return "actualizar.html";
     }
 
-    @PostMapping("/actualizar/{id_propietario}")
+    @PostMapping("/index/actualizar/{id_propietario}")
     public String updateVisita(@PathVariable Integer id_propietario,@ModelAttribute("visitantes") Visitantes visitantes,Model model){
         Visitantes existenvisita= Visitasservice.getVisitantesById(id_propietario);
         existenvisita.setIdPropietario(id_propietario);
@@ -80,12 +80,12 @@ import co.parkapp.parkapp.services.visitasservice;
         existenvisita.setEstado(visitantes.getEstado());
         existenvisita.setValorpagado(visitantes.getValorpagado());
         Visitasservice.updateVisitas(existenvisita);
-        return "redirect:/consulta_visita";
+        return "redirect:/consultar-visitas";
     }
 
-    @GetMapping("/eliminar/{id_propietario}")
+    @GetMapping("/index/eliminar/{id_propietario}")
     public String deleteVisita(@PathVariable Integer id_propietario){
         Visitasservice.deleteVisitasById(id_propietario);
-        return "redirect:/consulta_visita";
+        return "eliminar.html";
     }
 }
