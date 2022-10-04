@@ -12,7 +12,7 @@ public interface visitantesrepository extends JpaRepository<Visitantes,Long>{
     @Query("FROM Visitantes v WHERE v.propietario LIKE :propietario")
     List<Visitantes>findByNameContainign(@Param("propietario")String propietario);
 
-    @Query("FROM Visitantes v WHERE v.id_propietario LIKE :id_propietario")
-    List<Visitantes>findByIdContainign(@Param("id_propietario")Integer id_propietario);
+    @Query("FROM Visitantes v WHERE v.idPropietario LIKE :idPropietario")
+    List<Visitantes>findByIdContainign(@Param("idPropietario")Integer idPropietario);
 
 }

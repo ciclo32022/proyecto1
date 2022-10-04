@@ -50,7 +50,7 @@ import co.parkapp.parkapp.services.visitasservice;
         return "consulta_visita";
     }
 
-    @GetMapping("/visitas/new")
+    @GetMapping("/crearvisita")
     public String createVisitaForm(Model model){
         Visitantes visitantes=new Visitantes();
         model.addAttribute("visitantes",visitantes);
