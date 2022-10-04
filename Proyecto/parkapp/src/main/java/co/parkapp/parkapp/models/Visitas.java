@@ -12,12 +12,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
@@ -25,21 +22,8 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @Table(name = "visitas")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Visitas.findAll", query = "SELECT v FROM Visitas v"),
-    @NamedQuery(name = "Visitas.findByIdVisita", query = "SELECT v FROM Visitas v WHERE v.idVisita = :idVisita"),
-    @NamedQuery(name = "Visitas.findByIdPropietario", query = "SELECT v FROM Visitas v WHERE v.idPropietario = :idPropietario"),
-    @NamedQuery(name = "Visitas.findByPropietario", query = "SELECT v FROM Visitas v WHERE v.propietario = :propietario"),
-    @NamedQuery(name = "Visitas.findByPlaca", query = "SELECT v FROM Visitas v WHERE v.placa = :placa"),
-    @NamedQuery(name = "Visitas.findByTipovehiculo", query = "SELECT v FROM Visitas v WHERE v.tipovehiculo = :tipovehiculo"),
-    @NamedQuery(name = "Visitas.findByHoraentrada", query = "SELECT v FROM Visitas v WHERE v.horaentrada = :horaentrada"),
-    @NamedQuery(name = "Visitas.findByHorasalida", query = "SELECT v FROM Visitas v WHERE v.horasalida = :horasalida"),
-    @NamedQuery(name = "Visitas.findByValorpagado", query = "SELECT v FROM Visitas v WHERE v.valorpagado = :valorpagado"),
-    @NamedQuery(name = "Visitas.findByEstado", query = "SELECT v FROM Visitas v WHERE v.estado = :estado")})
 public class Visitas implements Serializable {
 
-    private static final long serialVersionUID = 1L;
     @Basic(optional = false)
     @Column(name = "id_visita")
     @GeneratedValue(strategy = GenerationType.AUTO)
