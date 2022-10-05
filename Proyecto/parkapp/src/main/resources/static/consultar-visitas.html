@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
@@ -80,88 +80,26 @@
               <th scope="col">#</th>
               <th scope="col">Nombre del Propietario</th>
               <th scope="col">Placa</th>
-              <th scope="col">Fecha de Ingreso</th>
               <th scope="col">Hora de Ingreso</th>
-              <th scope="col">Fecha de Salida</th>
               <th scope="col">Hora de Salida</th>
               <th scope="col">Precio</th>
-              <th scope="col">Eliminar</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr th:each="Visitantes :${visitas}">
               <th scope="row">1</th>
-              <td>Mark</td>
-              <td>TXC74F</td>
-              <td>20/09/2022</td>
-              <td>10:00</td>
-              <td>20/09/2022</td>
-              <td>11:00</td>
-              <td>$5.000</td>
-              <td><span style="font-size: 25px;"><a href="#"><i class="ri-close-circle-fill"></i></a></span></td>           
+              <td th:text="${Visitantes.propietario}"></td>
+              <td th:text="${Visitantes.placa}"></td>
+              <td th:text="${Visitantes.horaentrada}"></td>
+              <td th:text="${Visitantes.horasalida}"></td>
+              <td th:text="${Visitantes.valorpagado}"></td>           
             </tr>
-
-            <tr>
-              <th scope="row">1</th>
-              <td>John Smith</td>
-              <td>DHL25R</td>
-              <td>20/09/2022</td>
-              <td>11:00</td>
-              <td>20/09/2022</td>
-              <td>15:00</td>
-              <td>$20.000</td>
-              <td><span style="font-size: 25px;"><a href="#"><i class="ri-close-circle-fill"></i></a></span></td>           
-            </tr>
-
-            <tr>
-              <th scope="row">1</th>
-              <td>Pepito Perez</td>
-              <td>XRE40F</td>
-              <td>20/09/2022</td>
-              <td>12:00</td>
-              <td>20/09/2022</td>
-              <td>17:00</td>
-              <td>$25.000</td>
-              <td><span style="font-size: 25px;"><a href="#"><i class="ri-close-circle-fill"></i></a></span></td>           
-            </tr>
-
-            <tr>
-              <th scope="row">1</th>
-              <td>Lucia Fernandez</td>
-              <td>MED85H</td>
-              <td>20/09/2022</td>
-              <td>13:00</td>
-              <td>20/09/2022</td>
-              <td>15:00</td>
-              <td>$10.000</td>
-              <td><span style="font-size: 25px;"><a href="#"><i class="ri-close-circle-fill"></i></a></span></td>           
-            </tr>
-
-            <tr>
-              <th scope="row">1</th>
-              <td>Nina Martinez</td>
-              <td>WXYD85T</td>
-              <td>20/09/2022</td>
-              <td>14:00</td>
-              <td>20/09/2022</td>
-              <td>18:00</td>
-              <td>$20.000</td>
-              <td><span style="font-size: 25px;"><a href="#"><i class="ri-close-circle-fill"></i></a></span></td>           
-            </tr>
-            
           </tbody>
         </table>
-
-
-
-
       </div>
 
-      
     </div>
   </section><!-- End Hero -->
-
- 
 
 
   <div id="preloader"></div>

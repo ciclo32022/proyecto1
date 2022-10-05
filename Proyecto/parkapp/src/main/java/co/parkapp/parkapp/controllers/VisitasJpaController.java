@@ -44,33 +44,33 @@ import co.parkapp.parkapp.services.visitasservice;
         return "index.html";
     }
 
-    @GetMapping("/index/listarvisitas")
+    @GetMapping("/listarvisitas")
     public String listVisitas(Model model){
         model.addAttribute("visitas",Visitasservice.getAllVisitas());
         return "consultar-visitas";
     }
 
-    @GetMapping("/index/new")
+    @GetMapping("/crearvisita")
     public String createVisitaForm(Model model){
         Visitantes visitantes=new Visitantes();
         model.addAttribute("visitantes",visitantes);
         return "crear-visita.html";
     }
 
-    @PostMapping("/index/safe")
+    @PostMapping("/safe")
     public String safeVisita(@ModelAttribute("visitantes") Visitantes visitantes){
         Visitasservice.saveVisitas(visitantes);
         return "redirect:/consultar-visitas";
     }
 
-    @GetMapping("/index/edit/{id_propietario}")
+    @GetMapping("/edit/{id_propietario}")
     public String editVisitaForm(@PathVariable Integer id_propietario,Model model){
         Visitantes vt= Visitasservice.getVisitantesById(id_propietario);
         model.addAttribute("visitantes",vt);
         return "actualizar.html";
     }
 
-    @PostMapping("/index/actualizar/{id_propietario}")
+    @PostMapping("/actualizar/{id_propietario}")
     public String updateVisita(@PathVariable Integer id_propietario,@ModelAttribute("visitantes") Visitantes visitantes,Model model){
         Visitantes existenvisita= Visitasservice.getVisitantesById(id_propietario);
         existenvisita.setIdPropietario(id_propietario);
@@ -83,7 +83,7 @@ import co.parkapp.parkapp.services.visitasservice;
         return "redirect:/consultar-visitas";
     }
 
-    @GetMapping("/index/eliminar/{id_propietario}")
+    @GetMapping("/eliminar/{id_propietario}")
     public String deleteVisita(@PathVariable Integer id_propietario){
         Visitasservice.deleteVisitasById(id_propietario);
         return "eliminar.html";

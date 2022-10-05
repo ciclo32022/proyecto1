@@ -5,7 +5,6 @@
 package co.parkapp.parkapp.models;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,8 +12,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 /**
  *
@@ -43,12 +40,10 @@ public class Visitas implements Serializable {
     private String tipovehiculo;
     @Basic(optional = false)
     @Column(name = "horaentrada")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date horaentrada;
+    private String horaentrada;
     @Basic(optional = false)
     @Column(name = "horasalida")
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date horasalida;
+    private String horasalida;
     @Basic(optional = false)
     @Column(name = "valorpagado")
     private float valorpagado;
@@ -63,7 +58,7 @@ public class Visitas implements Serializable {
         this.idPropietario = idPropietario;
     }
 
-    public Visitas(Integer idPropietario, int idVisita, String propietario, String placa, String tipovehiculo, Date horaentrada, Date horasalida, float valorpagado, String estado) {
+    public Visitas(Integer idPropietario, int idVisita, String propietario, String placa, String tipovehiculo, String horaentrada, String horasalida, float valorpagado, String estado) {
         this.idPropietario = idPropietario;
         this.idVisita = idVisita;
         this.propietario = propietario;
@@ -115,19 +110,19 @@ public class Visitas implements Serializable {
         this.tipovehiculo = tipovehiculo;
     }
 
-    public Date getHoraentrada() {
+    public String getHoraentrada() {
         return horaentrada;
     }
 
-    public void setHoraentrada(Date horaentrada) {
+    public void setHoraentrada(String horaentrada) {
         this.horaentrada = horaentrada;
     }
 
-    public Date getHorasalida() {
+    public String getHorasalida() {
         return horasalida;
     }
 
-    public void setHorasalida(Date horasalida) {
+    public void setHorasalida(String horasalida) {
         this.horasalida = horasalida;
     }
 

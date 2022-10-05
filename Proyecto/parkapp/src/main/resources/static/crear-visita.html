@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
@@ -66,7 +66,7 @@
     <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
       <div class="row justify-content-center">
         <div class="col-xl-7 col-lg-9 text-center">
-          <h1>Crear Automóvil
+          <h1>Crear Visita
           </h1>
           <h2>Rellena los campos del formulario:</h2>
         </div>
@@ -74,28 +74,31 @@
       
         <br>
       <div class="row box-form">
-        <form class="row g-3">
+        <form class="row g-3" th:action="@{/safe}" th:object="${visitantes}" method="POST">
           <div class="col-md-6">
-            <label for="inputplaca" class="form-label">Placa</label>
-            <input type="text" class="form-control" id="inputplaca">
+            <label for="inputid" class="form-label">ID Propietario</label>
+            <input type="text" th:field="*{idPropietario}" class="form-control" id="inputid">
           </div>
           <div class="col-md-6">
             <label for="inputnombre" class="form-label">Nombre del propietario</label>
-            <input type="text" class="form-control" id="inputnombre">
+            <input type="text" th:field="*{propietario}" class="form-control" id="inputnombre">
           </div>
-         
+          <div class="col-md-6">
+            <label for="inputplaca" class="form-label">Placa</label>
+            <input type="text" th:field="*{placa}" class="form-control" id="inputplaca">
+          </div>
           <div class="col-md-5">
-            <label for="inputmarca" class="form-label">Marca del automóvil</label>
-            <input type="text" class="form-control" id="inputmarca">
+            <label for="inputvehiculo" class="form-label">Tipo de Vehiculo</label>
+            <input type="text" th:field="*{tipovehiculo}" class="form-control" id="inputvehiculo">
           </div>
 
           <div class="col-md-3">
-            <label for="inputdate" class="form-label">Fecha de ingreso</label>
-            <input type="text" class="form-control" id="inputdate">
+            <label for="inputestado" class="form-label">Estado</label>
+            <input type="text" th:field="*{estado}" class="form-control" id="inputestado">
           </div>
           <div class="col-md-4">
-            <label for="inputState" class="form-label">Hora</label>
-            <select id="inputState" class="form-select">
+            <label for="inputState" class="form-label">Hora de Entrada</label>
+            <select id="inputState" th:field="*{horaentrada}" class="form-select">
               <option selected>Selecciona...</option>
               <option>08:00</option>
               <option>09:00</option>
@@ -117,7 +120,7 @@
           
           
           <div class="col-12">
-            <button type="submit" class="btn btn-primary">Crear</button>
+            <a th:href="@{/crearvisita}" class="btn btn-primary">Crear</a>
           </div>
         </form>
 

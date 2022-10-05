@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 
 <head>
   <meta charset="utf-8">
@@ -79,81 +79,15 @@
 
        
         <br>
-        <form class="row g-3">
+        <form class="row g-3" th:action="@{/eliminar/{id_propietario}}" th:object="${visitantes}" method="POST">
           <div class="col-md-6">
-            <label for="inputState" class="form-label">Seleccionar auto</label>
-            <select id="inputState" class="form-select">
-              <option selected>Selecciona...</option></select>
-          </div>
-          <div class="col-md-6">
-            <label for="inputState" class="form-label">Seleccionar nombre del propietario</label>
-            <select id="inputState" class="form-select">
-              <option selected>Selecciona...</option></select>
-          </div>
-         
-          
-
-          <div class="col-md-3">
-            <label for="inputdate" class="form-label">Fecha de ingreso</label>
-            <input type="text" class="form-control" id="inputdate">
-          </div>
-          <div class="col-md-3">
-            <label for="inputState" class="form-label">Hora de ingreso
-            </label>
-            <select id="inputState" class="form-select">
-              <option selected>Selecciona...</option>
-              <option>08:00</option>
-              <option>09:00</option>
-              <option>10:00</option>
-              <option>11:00</option>
-              <option>12:00</option>
-              <option>13:00</option>
-              <option>14:00</option>
-              <option>15:00</option>
-              <option>16:00</option>
-              <option>17:00</option>
-              <option>18:00</option>
-              <option>19:00</option>
-              <option>20:00</option>
-              <option>21:00</option>
-              <option>22:00</option>
-            </select>
-          </div>
-          
-
-          <div class="col-md-3">
-            <label for="inputdate" class="form-label">Fecha de salida</label>
-            <input type="text" class="form-control" id="inputdate">
-          </div>
-          <div class="col-md-3">
-            <label for="inputState" class="form-label">Hora de salida</label>
-            <select id="inputState" class="form-select">
-              <option selected>Selecciona...</option>
-              <option>08:00</option>
-              <option>09:00</option>
-              <option>10:00</option>
-              <option>11:00</option>
-              <option>12:00</option>
-              <option>13:00</option>
-              <option>14:00</option>
-              <option>15:00</option>
-              <option>16:00</option>
-              <option>17:00</option>
-              <option>18:00</option>
-              <option>19:00</option>
-              <option>20:00</option>
-              <option>21:00</option>
-              <option>22:00</option>
-            </select>
-          </div>
+            <label for="inputid" class="form-label">Seleccionar ID del propietario</label>
+            <input type="text" th:field="*{idPropietario}" class="form-control" id="inputid">
           
           <div class="col-12">
-            <button type="submit" class="btn btn-primary">Eliminar</button>
+            <a th:href="@{/eliminar/{id_propietario}(id_propietario=${Visitantes.idPropietario})}" class="btn btn-primary">Eliminar</a>
           </div>
         </form>
-
-
-
 
       </div>
 
