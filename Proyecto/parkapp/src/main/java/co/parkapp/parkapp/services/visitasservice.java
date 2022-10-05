@@ -2,9 +2,12 @@ package co.parkapp.parkapp.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import co.parkapp.parkapp.entity.Visitantes;
 import co.parkapp.parkapp.repository.visitantesrepository;
 
+@Service
 public class visitasservice implements ivisitasservice {
 
     private visitantesrepository visitasrepository;
